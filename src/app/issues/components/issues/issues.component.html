@@ -1,0 +1,19 @@
+<mat-tab-group mat-stretch-tabs>
+
+  <mat-tab label="Open">
+    <ul>
+      <li *ngFor="let issue of (openIssues$ | async)">
+        {{issue.title}}
+      </li>
+    </ul>
+
+  </mat-tab>
+  <mat-tab label="Closed">
+    <ul>
+      <li *ngFor="let issue of (closedIssues$ | async)">
+        {{issue.title}}
+      </li>
+    </ul>
+  </mat-tab>
+
+</mat-tab-group>
