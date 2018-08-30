@@ -9,7 +9,6 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HomeModule } from "./home/home.module";
 import { IssuesModule } from "./issues/issues.module";
-import { AboutModule } from "./about/about.module";
 import { SharedState } from "./shared/store/shared.state";
 import { HttpClientModule } from "@angular/common/http";
 import { HomeState } from "./home/store/home.state";
@@ -33,7 +32,6 @@ import { LayoutModule } from "@angular/cdk/layout";
     RouterModule,
     HomeModule,
     IssuesModule,
-    AboutModule,
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
