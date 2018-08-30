@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HomeComponent } from "./components/home/home.component";
-import { BoardComponent } from "./components/board/board.component";
+import { ChartsComponent } from "./components/charts/charts.component";
 import {
   MatGridListModule,
   MatCardModule,
@@ -11,7 +11,7 @@ import {
 } from "@angular/material";
 import { LayoutModule } from "@angular/cdk/layout";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
-import { CounterComponent } from "./components/counter/counter.component";
+import { StatsComponent } from "./components/stats/stats.component";
 
 @NgModule({
   imports: [
@@ -24,7 +24,7 @@ import { CounterComponent } from "./components/counter/counter.component";
     LayoutModule,
     NgxChartsModule
   ],
-  declarations: [HomeComponent, BoardComponent, CounterComponent],
-  exports: [HomeComponent, BoardComponent]
+  declarations: [HomeComponent, ChartsComponent, StatsComponent],
+  exports: [HomeComponent, ChartsComponent]
 })
 export class HomeModule {}

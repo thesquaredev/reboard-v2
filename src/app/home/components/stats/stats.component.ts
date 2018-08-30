@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from "@angular/core";
 import { RepoInfo } from "../../../shared/model/info.interface";
 
 @Component({
-  selector: "app-counter",
-  templateUrl: "./counter.component.html",
-  styleUrls: ["./counter.component.css"]
+  selector: "app-stats",
+  templateUrl: "./stats.component.html",
+  styleUrls: ["./stats.component.css"]
 })
-export class CounterComponent implements OnInit {
+export class StatsComponent implements OnInit {
   @Input()
   info: RepoInfo;
   constructor() {}
