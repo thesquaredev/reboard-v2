@@ -7,10 +7,12 @@ import {
   MatCardModule,
   MatMenuModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule,
+  MatListModule
 } from "@angular/material";
 import { LayoutModule } from "@angular/cdk/layout";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { StatsComponent } from "./components/stats/stats.component";
 
 @NgModule({
@@ -21,8 +23,10 @@ import { StatsComponent } from "./components/stats/stats.component";
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
+    MatListModule,
     LayoutModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FlexLayoutModule
   ],
   declarations: [HomeComponent, ChartsComponent, StatsComponent],
   exports: [HomeComponent, ChartsComponent]

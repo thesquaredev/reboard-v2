@@ -5,7 +5,7 @@ import { ChangeRepo } from "./shared/store/shared.actions";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
   constructor(private store: Store) {}

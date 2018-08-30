@@ -1,4 +1,15 @@
-<app-stats [info]="info$ | async">
-</app-stats>
-<app-charts>
-</app-charts>
+<div class="home"
+     fxLayout="column"
+     fxLayoutAlign="center flex-start">
+  <app-stats [info]="info$ | async"
+             class="home__stats"
+             fxFlex="701px"
+             fxFlex.sm="350px"
+             fxFlex.gt-sm="170px"
+             fxLayout
+             fxLayout.lt-md="row wrap"
+             fxLayoutAlign="space-between flex-start"></app-stats>
+  <app-charts class="home__charts"
+              fxLayout="row wrap"
+              fxLayoutAlign="space-between flex-start"></app-charts>
+</div>

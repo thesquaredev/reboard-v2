@@ -1,0 +1,32 @@
+.home {
+  &__stat {
+    color: white;
+    box-shadow: 0 0 1px -4px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+    margin: 8px;
+    &__title {
+      font-size: 2.3rem !important;
+    }
+    &__subtitle {
+      color: white;
+      font-weight: 200;
+    }
+    &__actions {
+      float: right;
+    }
+    &--red {
+      background: #fe7675;
+    }
+
+    &--blue {
+      background: #2dabe5;
+    }
+
+    &--orange {
+      background: #ffc36d;
+    }
+
+    &--green {
+      background: #54e69d;
+    }
+  }
+}

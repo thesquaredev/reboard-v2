@@ -1,102 +1,87 @@
-<div class="grid-container">
+<mat-card class="home__chart" fxFlex="100" fxFlex.gt-sm="61">
+  <mat-card-header>
+    <div class="home__chart__title" fxLayout fxLayoutAlign="space-between center">
+      <span>Conributions (last year)</span>
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <ngx-charts-line-chart [results]="participation$ | async">
+      </ngx-charts-line-chart>
+    </div>
+  </mat-card-content>
+</mat-card>
 
-  <mat-grid-list cols="10" rowHeight="350px">
+<mat-card class="home__chart" fxFlex="100" fxFlex.gt-sm="35.3">
+  <mat-card-header>
+    <div class="home__chart__title" fxLayout fxLayoutAlign="space-between center">
+      <span>Stats</span>
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <mat-icon mat-list-icon color="accent">star</mat-icon>
+        <h4 mat-line>{{(info$ | async)?.stargazers_count}}</h4>
+        <p mat-line> stargazers </p>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon color="accent">content_copy</mat-icon>
+        <h4 mat-line>{{(info$ | async)?.forks_count}}</h4>
+        <p mat-line> forks </p>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon color="accent">bug_report</mat-icon>
+        <h4 mat-line>{{(info$ | async)?.open_issues_count}}</h4>
+        <p mat-line> open issues </p>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon color="accent">rss_feed</mat-icon>
+        <h4 mat-line>{{(info$ | async)?.subscribers_count}}</h4>
+        <p mat-line> subscribers </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
 
-    <mat-grid-tile [colspan]="6" [rowspan]="1">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            Contributions (last year)
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>
-            <ngx-charts-line-chart [results]="participation$ | async">
-            </ngx-charts-line-chart>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="4" [rowspan]="1">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            Stats
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <ul *ngIf="info$ | async">
-            <li>{{(info$ | async)?.stargazers_count}} stargazers</li>
-            <li>{{(info$ | async)?.forks}} forks</li>
-            <li>{{(info$ | async)?.open_issues}} open issues</li>
-            <li>{{(info$ | async)?.subscribers_count}} subscribers</li>
-          </ul>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
+<mat-card class="home__chart" fxFlex="100" fxFlex.gt-sm="45.3">
+  <mat-card-header>
+    <div class="home__chart__title" fxLayout fxLayoutAlign="space-between center">
+      <span>Languages</span>
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf="languages$ | async">
+      <ngx-charts-pie-chart [results]="languages$ | async" [labels]=true [doughnut]=true>
+      </ngx-charts-pie-chart>
 
-  </mat-grid-list>
+    </div>
+  </mat-card-content>
+</mat-card>
 
-</div>
-
-<div class="grid-container">
-
-  <mat-grid-list cols="10" rowHeight="350px">
-
-    <mat-grid-tile [colspan]="4" [rowspan]="1">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            Languages
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div *ngIf="languages$ | async">
-            <ngx-charts-pie-chart [results]="languages$ | async" [labels]=true [doughnut]=true>
-            </ngx-charts-pie-chart>
-
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]="6" [rowspan]="1">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            Top contributors
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>
-            <ngx-charts-bar-vertical [results]="contributors$ | async">
-            </ngx-charts-bar-vertical>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-
-  </mat-grid-list>
-
-</div>
+<mat-card class="home__chart" fxFlex="100" fxFlex.gt-sm="51">
+  <mat-card-header>
+    <div class="home__chart__title" fxLayout fxLayoutAlign="space-between center">
+      <span>Top contributors</span>
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <ngx-charts-bar-vertical [results]="contributors$ | async">
+      </ngx-charts-bar-vertical>
+    </div>
+  </mat-card-content>
+</mat-card>

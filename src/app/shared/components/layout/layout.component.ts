@@ -10,7 +10,7 @@ import { Select } from "@ngxs/store";
 @Component({
   selector: "app-shared/components/layout",
   templateUrl: "./layout.component.html",
-  styleUrls: ["./layout.component.css"]
+  styleUrls: ["./layout.component.scss"]
 })
 export class LayoutComponent {
   isHandset$: Observable<boolean> = this.breakpointObserver

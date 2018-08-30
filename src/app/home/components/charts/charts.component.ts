@@ -10,7 +10,7 @@ import { ChartData, LineChartData } from "../../../shared/model/charts.interface
 @Component({
   selector: "app-charts",
   templateUrl: "./charts.component.html",
-  styleUrls: ["./charts.component.css"]
+  styleUrls: ["./charts.component.scss"]
 })
 export class ChartsComponent {
   @Select(SharedState.info)
