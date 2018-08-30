@@ -37,7 +37,7 @@ export class SharedState {
   @Action(ChangeRepo)
   changeRepo(ctx: StateContext<any>, { repo }: ChangeRepo) {
     // check if repo exists
-    return this.githubService.repoExists(repo).pipe(
+    return this.githubService.getRepoInfo(repo).pipe(
       take(1),
       tap(
         info => {

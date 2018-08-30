@@ -1,5 +1,5 @@
 import { State, Action, StateContext, Selector } from "@ngxs/store";
-import { GetRepoInfo, GetCommits, GetLanguages, GetContributors } from "./home.actions";
+import { GetCommits, GetLanguages, GetContributors } from "./home.actions";
 import { Participation } from "../../shared/model/participation.interface";
 import { Contributor } from "../../shared/model/contributors.interface";
 import { GithubService } from "../../shared/services/github/github.service";
