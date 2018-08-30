@@ -8,11 +8,11 @@ import { Languages } from "../../../shared/model/languages.interface";
 import { ChartData, LineChartData } from "../../../shared/model/charts.interface";
 
 @Component({
-  selector: "app-home/components/board",
-  templateUrl: "./board.component.html",
-  styleUrls: ["./board.component.css"]
+  selector: "app-charts",
+  templateUrl: "./charts.component.html",
+  styleUrls: ["./charts.component.css"]
 })
-export class BoardComponent {
+export class ChartsComponent {
   @Select(SharedState.info)
   info$: Observable<RepoInfo>;
   @Select(HomeState.languages)
