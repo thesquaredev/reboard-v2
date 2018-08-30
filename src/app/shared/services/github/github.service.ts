@@ -6,16 +6,13 @@ import { RepoInfo } from "../../model/info.interface";
 import { Participation } from "../../model/participation.interface";
 import { Contributor } from "../../model/contributors.interface";
 import { Languages } from "../../model/languages.interface";
+import { Issue } from "../../model/issues.interface";
 
 @Injectable({
   providedIn: "root"
 })
 export class GithubService {
   constructor(private http: HttpClient) {}
-
-  getRepoInfo(repo: string): Observable<RepoInfo> {
-    return this.http.get<RepoInfo>(`${environment.githubApi.reposUrl}${repo}`);
-  }
 
   getCommits(repo: string): Observable<Participation> {
     return this.http.get<Participation>(
@@ -31,13 +28,11 @@ export class GithubService {
     return this.http.get<Contributor[]>(`${environment.githubApi.reposUrl}${repo}/contributors`);
   }
 
-  getIssues(repo: string, state: string): Observable<any> {
-    return this.http.get<RepoInfo>(
-      `${environment.githubApi.reposUrl}${repo}/issues?state=${state}`
-    );
+  getIssues(repo: string, state: string): Observable<Issue[]> {
+    return this.http.get<Issue[]>(`${environment.githubApi.reposUrl}${repo}/issues?state=${state}`);
   }
 
-  repoExists(repo: string): Observable<any> {
-    return this.http.get(environment.githubApi.reposUrl + repo);
+  getRepoInfo(repo: string): Observable<RepoInfo> {
+    return this.http.get<RepoInfo>(environment.githubApi.reposUrl + repo);
   }
 }
