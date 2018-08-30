@@ -7,11 +7,18 @@
       </button>
     </div>
   </mat-card-header>
-  <mat-card-content>
-    <div>
-      <ngx-charts-line-chart [results]="participation$ | async">
+  <mat-card-content class="home__chart__content">
+      <ngx-charts-line-chart [results]="participation$ | async"
+                             [scheme]="colorScheme"
+                             [xAxis]="true"
+                             [yAxis]="true"
+                             [showXAxisLabel]="true"
+                             [showYAxisLabel]="true"
+                             [xAxisLabel]="xAxisLabel"
+                             [yAxisLabel]="yAxisLabel"
+                             [autoScale]="true"
+                             (select)="onSelect($event)">
       </ngx-charts-line-chart>
-    </div>
   </mat-card-content>
 </mat-card>
 
@@ -60,12 +67,13 @@
       </button>
     </div>
   </mat-card-header>
-  <mat-card-content>
-    <div *ngIf="languages$ | async">
-      <ngx-charts-pie-chart [results]="languages$ | async" [labels]=true [doughnut]=true>
+  <mat-card-content class="home__chart__content" *ngIf="languages$ | async">
+      <ngx-charts-pie-chart [results]="languages$ | async"
+                            [scheme]="colorScheme"
+                            [labels]=true
+                            [doughnut]=true
+                            (select)="onSelect($event)">
       </ngx-charts-pie-chart>
-
-    </div>
   </mat-card-content>
 </mat-card>
 
@@ -78,10 +86,14 @@
       </button>
     </div>
   </mat-card-header>
-  <mat-card-content>
-    <div>
-      <ngx-charts-bar-vertical [results]="contributors$ | async">
+  <mat-card-content class="home__chart__content">
+      <ngx-charts-bar-vertical [results]="contributors$ | async"
+                               [scheme]="colorScheme"
+                               [gradient]="true"
+                               [xAxis]="true"
+                               [yAxis]="true"
+                               [legend]=false
+                               (select)="onSelect($event)">
       </ngx-charts-bar-vertical>
-    </div>
   </mat-card-content>
 </mat-card>
